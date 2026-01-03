@@ -13,7 +13,7 @@
     - Context: PR #4649 (PeriodicDiskMonitor refactor discussion).
     - Concept: Using a Hysteresis Gate to signal state changes vs pushing events to consumers.
     - Key Insight: Gates isolate concurrency concerns and state management from the observer.
-- [ ] **Blog Post: Leaking Abstractions via Dependencies**
+- [x] **Blog Post: Leaking Abstractions via Dependencies** [commit: 02fae87]
     - Context: PR #4830 (Gate dependency injection).
     - Concept: Injecting a generic `Gate` forces callers to understand its configuration.
     - Key Insight: Components should own their "gates" (implementation detail) or depend on a domain-specific wrapper (e.g., `ReplicationStateMonitor`).
