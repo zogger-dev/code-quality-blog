@@ -8,7 +8,7 @@ This plan outlines the systematic restructuring and rewriting of the blog into a
     - Update `conductor/product.md` to reflect the new mission: building a living guide for code quality, focusing on readability and abstractions.
 - [x] **Task: Establish New Directory Structure** [9e46591]
     - Create the directory hierarchy for "Modules" and "Posts" (e.g., `posts/readability/`, `posts/abstraction/`, etc.).
-- [ ] **Task: Legacy Content Cleanup**
+- [x] **Task: Legacy Content Cleanup** [ef8b330]
     - Delete the existing AI-generated/PR-summary style blog posts in the `posts/` directory as we are performing a total replacement.
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Foundation & Vision Update' (Protocol in workflow.md)
 
