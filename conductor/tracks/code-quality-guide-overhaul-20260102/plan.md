@@ -18,7 +18,7 @@ This plan outlines the systematic restructuring and rewriting of the blog into a
     - Write the post on avoiding Inverted Conditionals (`if (!condition)`), including synthesized examples from PR reviews.
 - [x] **Task: Implement "Self-Documenting States" Post** [9e1d8e9]
     - Write the post on Enums vs. Mystery Booleans (e.g., Feature Flags), using the `State.DISABLED` example from PR #4537.
-- [ ] **Task: Implement "Taming Nesting" Post**
+- [x] **Task: Implement "Taming Nesting" Post** [12ded67]
     - Write the post on strategies to flatten logic, using the `Optional.map` + `Stream.map` complexity example provided by the user.
 - [ ] **Task: Implement "The DAMP Principle" Post**
     - Write the post on why test clarity (Descriptive And Meaningful Phrases) outweighs DRY, using examples from PR #130845.
