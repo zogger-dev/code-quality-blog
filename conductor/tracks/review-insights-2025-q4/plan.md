@@ -28,7 +28,7 @@
     - Context: PR #4830.
     - Concept: Swallowing interrupts or failing to restore the flag.
     - Key Insight: Always call `Thread.currentThread().interrupt()` if you can't propagate the exception.
-- [ ] **Blog Post: Avoiding Tight Loops**
+- [x] **Blog Post: Avoiding Tight Loops** [commit: ec00bc9]
     - Context: PR #4830.
     - Concept: Spinning CPU while waiting for a condition.
     - Key Insight: Use `await/signal` patterns or blocking queues instead of `while(!condition)`.
