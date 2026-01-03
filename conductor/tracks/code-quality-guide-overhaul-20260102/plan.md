@@ -2,7 +2,7 @@
 
 This plan outlines the systematic restructuring and rewriting of the blog into a cohesive "Code Quality Guide."
 
-## Phase 1: Foundation & Vision Update
+## Phase 1: Foundation & Vision Update [checkpoint: a0c5085]
 
 - [x] **Task: Update Product Vision** [a4840f0]
     - Update `conductor/product.md` to reflect the new mission: building a living guide for code quality, focusing on readability and abstractions.
