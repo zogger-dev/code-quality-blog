@@ -11,35 +11,21 @@ var mmsConfiguredTags =
         .map(
             tags ->
                 tags.entrySet().stream()
-                    .map(
-                        entry -> {
-                          var key =
-                              String.format(
-                                  "%s_%s",
-                                  MMS_CONFIG_METRIC_COMMON_LABELS_PREFIX, entry.getKey());
-                          return Tag.of(key, entry.getValue());
-                        })
+                    .map(this::toMetricTag)
                     .collect(Collectors.toUnmodifiableList()))
         .orElseGet(Collections::emptyList);
 ```
 
-We’ve used `Optional.map`, `Stream.map`, and a nested lambda. By the time the reader reaches the core logic, they are buried four levels deep in containers and closures. But the real issue here isn't just the nesting—it's the abstraction itself. `config.commonLabels()` is returning an `Optional<Map>`, which forces every caller to manage the "absence" of a collection.
+By the time the reader reaches the transformation, they are buried three levels deep in containers and closures. But the real issue here isn't just the syntax—it's the abstraction itself. `config.commonLabels()` is returning an `Optional<Map>`, forcing every caller to manage the "absence" of a collection.
 
-We can tame this nesting by improving the abstraction. If `commonLabels()` followed the Null Object Pattern and returned an empty map instead of an empty `Optional`, the logic collapses into a single, linear flow:
+We can tame this nesting by improving the underlying abstraction. If we follow the Null Object Pattern and ensure `commonLabels()` returns an empty map instead of an empty `Optional`, the entire nested structure collapses into a single, linear flow:
 
 ```java
 return config.commonLabels().entrySet().stream()
     .map(this::toMetricTag)
     .collect(Collectors.toUnmodifiableList());
-
-// ...
-
-private Tag toMetricTag(Map.Entry<String, String> entry) {
-    var key = String.format("%s_%s", MMS_CONFIG_METRIC_COMMON_LABELS_PREFIX, entry.getKey());
-    return Tag.of(key, entry.getValue());
-}
 ```
 
-The difference is staggering. By returning an empty collection, we eliminate the need for the `Optional` container entirely. The code moves from a nested puzzle to a simple sentence: "map these labels to metric tags." 
+The difference is profound. By choosing a better return type, we eliminate the need for the `Optional` container entirely. The code moves from a nested puzzle to a simple, declarative sentence: "map these labels to metric tags." 
 
-Better abstractions don't just hide complexity; they eliminate the need for it. When you return an `Optional<Collection>`, you are forcing your callers to deal with two different types of "emptiness." By choosing a better return type, you allow the logic to breathe and the reader to focus on the intent. Don't hide your logic in the shadows of deep indentation; give it a better foundation.
+Better abstractions don't just hide complexity; they eliminate the need for special handling. When you return an `Optional<Collection>`, you are forcing your callers to navigate two different kinds of "emptiness." By returning an empty collection, you allow the logic to breathe and the reader to focus on the intent. Don't hide your logic in the shadows of deep indentation; give it a better foundation.
