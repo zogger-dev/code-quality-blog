@@ -32,7 +32,7 @@
     - Context: PR #4830.
     - Concept: Spinning CPU while waiting for a condition.
     - Key Insight: Use `await/signal` patterns or blocking queues instead of `while(!condition)`.
-- [ ] **Blog Post: Inverted Conditional Anti-pattern**
+- [x] **Blog Post: Inverted Conditional Anti-pattern** [commit: f619175]
     - Context: PR #4830.
     - Concept: `if (!condition) { ... } else { ... }`.
     - Key Insight: Handle the positive case first for better readability.
