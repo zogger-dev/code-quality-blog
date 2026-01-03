@@ -7,7 +7,7 @@
 - PR #4649 (Pause FCIS downloads)
 - PR #4433 (Improve FCIS error reporting)
 
-## Phase 1: Architectural Patterns
+## Phase 1: Architectural Patterns [checkpoint: c9a62d0]
 
 - [x] **Blog Post: The "Gate" Pattern vs Event Consumers** [commit: 2476b6d]
     - Context: PR #4649 (PeriodicDiskMonitor refactor discussion).
@@ -18,7 +18,7 @@
     - Concept: Injecting a generic `Gate` forces callers to understand its configuration.
     - Key Insight: Components should own their "gates" (implementation detail) or depend on a domain-specific wrapper (e.g., `ReplicationStateMonitor`).
 
-## Phase 2: Coding Best Practices
+## Phase 2: Coding Best Practices [checkpoint: c9a62d0]
 
 - [x] **Blog Post: The Null Object Pattern vs Optional Arguments** [commit: 7e22dfa]
     - Context: PR #4649 (`Optional<DiskMonitor>`), PR #4433, PR #4830.
@@ -37,7 +37,7 @@
     - Concept: `if (!condition) { ... } else { ... }`.
     - Key Insight: Handle the positive case first for better readability.
 
-## Phase 3: Testing Patterns
+## Phase 3: Testing Patterns [checkpoint: c9a62d0]
 
 - [x] **Blog Post: Fakes vs Mocks** [commit: 1e6388b]
     - Context: PR #4649.
