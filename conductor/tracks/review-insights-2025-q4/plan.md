@@ -9,7 +9,7 @@
 
 ## Phase 1: Architectural Patterns
 
-- [~] **Blog Post: The "Gate" Pattern vs Event Consumers**
+- [x] **Blog Post: The "Gate" Pattern vs Event Consumers** [commit: 2476b6d]
     - Context: PR #4649 (PeriodicDiskMonitor refactor discussion).
     - Concept: Using a Hysteresis Gate to signal state changes vs pushing events to consumers.
     - Key Insight: Gates isolate concurrency concerns and state management from the observer.
