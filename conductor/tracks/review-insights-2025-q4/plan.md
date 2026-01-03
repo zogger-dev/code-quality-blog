@@ -24,7 +24,7 @@
     - Context: PR #4649 (`Optional<DiskMonitor>`), PR #4433, PR #4830.
     - Concept: Passing `Optional` as an argument is a code smell.
     - Key Insight: Use a `NoOp` implementation (Null Object Pattern) instead of `Optional`.
-- [ ] **Blog Post: Handling InterruptedException Correctly**
+- [x] **Blog Post: Handling InterruptedException Correctly** [commit: cd00bc9]
     - Context: PR #4830.
     - Concept: Swallowing interrupts or failing to restore the flag.
     - Key Insight: Always call `Thread.currentThread().interrupt()` if you can't propagate the exception.
