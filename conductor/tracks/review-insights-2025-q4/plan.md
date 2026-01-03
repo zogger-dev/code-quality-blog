@@ -39,7 +39,7 @@
 
 ## Phase 3: Testing Patterns
 
-- [ ] **Blog Post: Fakes vs Mocks**
+- [x] **Blog Post: Fakes vs Mocks** [commit: 1e6388b]
     - Context: PR #4649.
     - Concept: Mocking internal interactions (brittle) vs Faking state (robust).
     - Key Insight: Test behavior against state, not implementation details.
