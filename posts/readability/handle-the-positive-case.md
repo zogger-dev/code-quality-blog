@@ -1,10 +1,8 @@
 # Handle the Positive Case
 
-Writing readable code is often about minimizing the cognitive energy required to understand a logic flow. One of the most subtle yet effective ways to achieve this is by avoiding the **Inverted Conditional anti-pattern**.
+Writing readable code is an exercise in minimizing the cognitive energy required to navigate a logic flow. One of the most subtle yet effective ways to respect a reader's cognitive budget is to avoid the temptation of the inverted conditional.
 
-## The Tension
-
-Consider this snippet from a configuration bootstrapper. It’s tasked with initializing a disk monitor, but only if the configuration exists.
+Consider a configuration bootstrapper tasked with initializing a disk monitor. It's a common pattern: we only want to set up the full monitoring suite if the configuration is actually present. It's easy to fall into a structure like this:
 
 ```java
 if (!diskMonitorConfig.isPresent()) {
@@ -18,11 +16,9 @@ if (!diskMonitorConfig.isPresent()) {
 }
 ```
 
-At first glance, this code seems fine. But notice the first thing the reader encounters: a negation (`!`). To understand the subsequent block, the reader must maintain a mental state of "not having something." By the time they reach the `else` block—where the primary logic actually lives—they’ve already spent cognitive points on the "missing" case.
+At first glance, this code is functional and correct. But notice the mental tax it imposes on the reader. The very first thing they encounter is a negation—the "not having." To understand the subsequent block, the reader must maintain a mental state of absence. By the time they reach the `else` block—where the primary intent of the method actually lives—they’ve already spent cognitive points on the "missing" case.
 
-## The Resolution
-
-We can drastically improve the scanability of this code by simply handling the positive case first. This aligns the code flow with the reader's natural expectation: "If I have X, then do Y."
+We can drastically improve the scanability of this logic by aligning the code flow with the reader's natural expectation: "If I have X, then do Y." By simply handling the positive case first, the "happy path" moves front-and-center.
 
 ```java
 if (diskMonitorConfig.isPresent()) {
@@ -34,17 +30,6 @@ if (diskMonitorConfig.isPresent()) {
 }
 ```
 
-The difference is immediate. The "happy path"—the reason this code exists—is front-and-center. The `!` at the beginning, which is famously easy to miss during a quick scan, is gone. 
+The difference is immediate. The `!` at the beginning, which is famously easy to miss during a quick scan, is gone. The reason the code exists is now the first thing the reader processes. 
 
-## The Synthesis
-
-Why does this matter? Better abstractions are built on clear intent. When we use inverted conditionals, we force the reader to process the "exception" or "default" case before the "intent." This adds a layer of mental indirection that compounds as methods grow in complexity.
-
-By favoring the positive case, we:
-1.  **Reduce Cognitive Load:** The reader processes the primary logic while their mental context is fresh.
-2.  **Improve Scanability:** A quick glance reveals the "if something exists" condition, which is easier to grasp than "if something does *not* exist."
-3.  **Prevent "Missing Bang" Bugs:** Negation symbols are tiny and easy to overlook in code reviews. Handling the positive case eliminates this risk entirely for the primary block.
-
-## The Insight
-
-Always handle the positive case first. It makes your code flow naturally, reduces the risk of missed negations, and respects the reader's cognitive budget.
+Better abstractions are built on clear intent. When we favor the positive case, we allow the reader to process the primary logic while their mental context is fresh. We reduce the risk of the "missing bang" bug and turn a logic check into a natural sentence. Always favor the positive case; it respects the reader's flow and makes your code's purpose unmistakable.
