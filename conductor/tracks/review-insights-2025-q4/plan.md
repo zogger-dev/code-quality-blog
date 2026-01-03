@@ -43,7 +43,7 @@
     - Context: PR #4649.
     - Concept: Mocking internal interactions (brittle) vs Faking state (robust).
     - Key Insight: Test behavior against state, not implementation details.
-- [ ] **Blog Post: Test Method Naming**
+- [x] **Blog Post: Test Method Naming** [commit: 2a32e6b]
     - Context: PR #4649.
     - Concept: `testPauseDownloads` vs `pauseDownloads_whenDiskFull_blocks`.
     - Key Insight: Names should describe the scenario and expected outcome.
