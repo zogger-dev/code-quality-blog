@@ -20,7 +20,7 @@
 
 ## Phase 2: Coding Best Practices
 
-- [ ] **Blog Post: The Null Object Pattern vs Optional Arguments**
+- [x] **Blog Post: The Null Object Pattern vs Optional Arguments** [commit: 7e22dfa]
     - Context: PR #4649 (`Optional<DiskMonitor>`), PR #4433, PR #4830.
     - Concept: Passing `Optional` as an argument is a code smell.
     - Key Insight: Use a `NoOp` implementation (Null Object Pattern) instead of `Optional`.
