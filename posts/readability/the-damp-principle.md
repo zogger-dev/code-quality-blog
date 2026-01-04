@@ -176,11 +176,11 @@ better clarity for the reader, provided the matching rules are well-understood.
 While verification is critical, the "Arrange" phase (test setup) is equally
 susceptible to poor abstraction. Developers often fall into one of two traps:
 
-1.  **The Boilerplate Swamp:** The test is overwhelmed by manual object
-    construction.
-2.  **The Magic Box:** The setup is hidden behind a generic method like
-    `setupCluster(true, false, REGIONS)`, forcing the reader to inspect the
-    implementation to understand the impact of those boolean flags.
+1. **The Boilerplate Swamp:** The test is overwhelmed by manual object
+   construction.
+2. **The Magic Box:** The setup is hidden behind a generic method like
+   `setupCluster(true, false, REGIONS)`, forcing the reader to inspect the
+   implementation to understand the impact of those boolean flags.
 
 To mitigate the "Boilerplate Swamp," developers frequently introduce static
 factory methods. However, these often result in "WET" (Write Everything Twice)
