@@ -30,7 +30,7 @@ This plan outlines the systematic restructuring and rewriting of the blog into a
     - Write the post on wrapping generic constructs (e.g., `ReplicationStateMonitor` vs. a generic `Gate`), using insights from PR #4830.
 - [x] **Task: Implement "The Case Against Generics" Post** [1748a0d]
     - Write the post on recognizing "False Polymorphism" and leveraging Covariant Return Types, using examples from PR #143895.
-- [ ] **Task: Implement "Composition over Inheritance" Post**
+- [x] **Task: Implement "Composition over Inheritance" Post** [b34c25c]
     - Write the post on avoiding the "Wrong Abstraction" trap in test utilities, using the `BlobstoreConfigBaseUnitTests` example from PR #146634.
 - [ ] **Task: Implement "Avoiding Output Parameters" Post**
     - Write the post on favoring methods that return results over those that mutate passed-in state, using the `populateConfigMap` example from PR #146634.
