@@ -28,7 +28,7 @@ This plan outlines the systematic restructuring and rewriting of the blog into a
 
 - [x] **Task: Implement "Domain-Specific Semantics" Post** [66121b1]
     - Write the post on wrapping generic constructs (e.g., `ReplicationStateMonitor` vs. a generic `Gate`), using insights from PR #4830.
-- [ ] **Task: Implement "The Case Against Generics" Post**
+- [x] **Task: Implement "The Case Against Generics" Post** [1748a0d]
     - Write the post on recognizing "False Polymorphism" and leveraging Covariant Return Types, using examples from PR #143895.
 - [ ] **Task: Implement "Composition over Inheritance" Post**
     - Write the post on avoiding the "Wrong Abstraction" trap in test utilities, using the `BlobstoreConfigBaseUnitTests` example from PR #146634.
