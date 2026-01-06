@@ -56,7 +56,7 @@ This plan outlines the systematic restructuring and rewriting of the blog into a
 
 ## Phase 6: System Integrity Module [checkpoint: 699b34b]
 
-- [ ] **Task: Implement "Concurrency Contracts" Post**
+- [x] **Task: Implement "Concurrency Contracts" Post** [b48324b]
     - Write the post on correct `InterruptedException` handling and restoring the interrupt flag (PR #4830).
 - [ ] **Task: Implement "Avoiding Tight Loops" Post**
     - Write the post on using `await/signal` patterns to preserve CPU (PR #4830).
