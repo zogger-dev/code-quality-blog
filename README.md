@@ -14,7 +14,10 @@ A living, opinionated platform for sharing synthesized engineering wisdom, focus
 - [Composition over Inheritance](./posts/abstraction/composition-over-inheritance.md)
 - [Avoiding Output Parameters](./posts/abstraction/avoiding-output-parameters.md)
 
+## Module: The Case Against Optionals
+- [The Null Object Pattern vs. Optional Arguments](./posts/optionals/null-object-pattern.md)
+- [Local Scope Efficiency](./posts/optionals/local-scope-efficiency.md)
+
 ## Upcoming Modules
-- **The Case Against Optionals**
 - **Robust Testing**
 - **System Integrity**
