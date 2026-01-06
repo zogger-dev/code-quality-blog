@@ -60,6 +60,6 @@ This plan outlines the systematic restructuring and rewriting of the blog into a
     - Write the post on correct `InterruptedException` handling and restoring the interrupt flag (PR #4830).
 - [x] **Task: Implement "Avoiding Tight Loops" Post** [7d436b3]
     - Write the post on using `await/signal` patterns to preserve CPU (PR #4830).
-- [ ] **Task: Implement "Determinism" Post**
+- [x] **Task: Implement "Determinism" Post** [28b0c4f]
     - Write the post on why deterministic tie-breaking is critical for distributed systems (PR #136873).
 - [ ] Task: Conductor - User Manual Verification 'Phase 6: System Integrity Module' (Protocol in workflow.md)
