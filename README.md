@@ -18,6 +18,10 @@ A living, opinionated platform for sharing synthesized engineering wisdom, focus
 - [The Null Object Pattern vs. Optional Arguments](./posts/optionals/null-object-pattern.md)
 - [Local Scope Efficiency](./posts/optionals/local-scope-efficiency.md)
 
+## Module: Robust Testing
+- [State vs. Interaction: The Case Against Brittle Mocks](./posts/testing/state-vs-interaction.md)
+- [High-Fidelity Fakes: Mirrors of Reality](./posts/testing/high-fidelity-fakes.md)
+- [Hardcoding Verification: Eliminating Logic from Tests](./posts/testing/hardcoding-verification.md)
+
 ## Upcoming Modules
-- **Robust Testing**
 - **System Integrity**
