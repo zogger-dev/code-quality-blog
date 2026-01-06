@@ -52,9 +52,9 @@ This plan outlines the systematic restructuring and rewriting of the blog into a
     - Write the post on using doubles that behave like real systems (dynamic tokens, unique IDs) (PR #144751).
 - [x] **Task: Implement "Hardcoding Verification" Post** [28c4260]
     - Write the post on eliminating logic from test verification code (PR #130845).
-- [ ] Task: Conductor - User Manual Verification 'Phase 5: Robust Testing Module' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 5: Robust Testing Module' (Protocol in workflow.md) [699b34b]
 
-## Phase 6: System Integrity Module
+## Phase 6: System Integrity Module [checkpoint: 699b34b]
 
 - [ ] **Task: Implement "Concurrency Contracts" Post**
     - Write the post on correct `InterruptedException` handling and restoring the interrupt flag (PR #4830).
