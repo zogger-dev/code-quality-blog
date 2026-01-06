@@ -48,7 +48,7 @@ This plan outlines the systematic restructuring and rewriting of the blog into a
 
 - [x] **Task: Implement "State vs. Interaction" Post** [44d3cf1]
     - Write the post on why faking state is more robust than mocking internal calls ("Change Detector Tests") (PR #4649, #4830).
-- [ ] **Task: Implement "High-Fidelity Fakes" Post**
+- [x] **Task: Implement "High-Fidelity Fakes" Post** [caa4af3]
     - Write the post on using doubles that behave like real systems (dynamic tokens, unique IDs) (PR #144751).
 - [ ] **Task: Implement "Hardcoding Verification" Post**
     - Write the post on eliminating logic from test verification code (PR #130845).
