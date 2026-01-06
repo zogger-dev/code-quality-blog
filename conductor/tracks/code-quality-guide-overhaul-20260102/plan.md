@@ -46,7 +46,7 @@ This plan outlines the systematic restructuring and rewriting of the blog into a
 
 ## Phase 5: Robust Testing Module [checkpoint: 008c29e]
 
-- [ ] **Task: Implement "State vs. Interaction" Post**
+- [x] **Task: Implement "State vs. Interaction" Post** [44d3cf1]
     - Write the post on why faking state is more robust than mocking internal calls ("Change Detector Tests") (PR #4649, #4830).
 - [ ] **Task: Implement "High-Fidelity Fakes" Post**
     - Write the post on using doubles that behave like real systems (dynamic tokens, unique IDs) (PR #144751).
