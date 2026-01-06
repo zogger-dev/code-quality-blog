@@ -42,9 +42,9 @@ This plan outlines the systematic restructuring and rewriting of the blog into a
     - Write the deep-dive post on using `.noop()` or `NoOp` implementations instead of passing `Optional` as an argument (PR #4830).
 - [x] **Task: Implement "Local Scope Efficiency" Post** [ed1ddbb]
     - Write the post on avoiding boxing and cumbersome syntax in purely local contexts, using the map lookup examples from PR #136873.
-- [ ] Task: Conductor - User Manual Verification 'Phase 4: The Case Against Optionals Module' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 4: The Case Against Optionals Module' (Protocol in workflow.md) [008c29e]
 
-## Phase 5: Robust Testing Module
+## Phase 5: Robust Testing Module [checkpoint: 008c29e]
 
 - [ ] **Task: Implement "State vs. Interaction" Post**
     - Write the post on why faking state is more robust than mocking internal calls ("Change Detector Tests") (PR #4649, #4830).
