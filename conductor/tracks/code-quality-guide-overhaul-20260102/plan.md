@@ -40,7 +40,7 @@ This plan outlines the systematic restructuring and rewriting of the blog into a
 
 - [x] **Task: Implement "The Null Object Pattern" Post** [b9bfc13]
     - Write the deep-dive post on using `.noop()` or `NoOp` implementations instead of passing `Optional` as an argument (PR #4830).
-- [ ] **Task: Implement "Local Scope Efficiency" Post**
+- [x] **Task: Implement "Local Scope Efficiency" Post** [ed1ddbb]
     - Write the post on avoiding boxing and cumbersome syntax in purely local contexts, using the map lookup examples from PR #136873.
 - [ ] Task: Conductor - User Manual Verification 'Phase 4: The Case Against Optionals Module' (Protocol in workflow.md)
 
