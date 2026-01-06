@@ -23,5 +23,7 @@ A living, opinionated platform for sharing synthesized engineering wisdom, focus
 - [High-Fidelity Fakes: Mirrors of Reality](./posts/testing/high-fidelity-fakes.md)
 - [Hardcoding Verification: Eliminating Logic from Tests](./posts/testing/hardcoding-verification.md)
 
-## Upcoming Modules
-- **System Integrity**
+## Module: System Integrity
+- [Concurrency Contracts: Handling InterruptedException](./posts/system-integrity/concurrency-contracts.md)
+- [Avoiding Tight Loops: Stop Spinning your CPU](./posts/system-integrity/avoiding-tight-loops.md)
+- [Determinism: The Foundation of Distributed Integrity](./posts/system-integrity/determinism.md)
