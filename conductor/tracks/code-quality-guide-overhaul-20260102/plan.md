@@ -34,9 +34,9 @@ This plan outlines the systematic restructuring and rewriting of the blog into a
     - Write the post on avoiding the "Wrong Abstraction" trap in test utilities, using the `BlobstoreConfigBaseUnitTests` example from PR #146634.
 - [x] **Task: Implement "Avoiding Output Parameters" Post** [7dab86e]
     - Write the post on favoring methods that return results over those that mutate passed-in state, using the `populateConfigMap` example from PR #146634.
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: The Art of Abstraction Module' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 3: The Art of Abstraction Module' (Protocol in workflow.md) [6fcfdeb]
 
-## Phase 4: The Case Against Optionals Module
+## Phase 4: The Case Against Optionals Module [checkpoint: 6fcfdeb]
 
 - [ ] **Task: Implement "The Null Object Pattern" Post**
     - Write the deep-dive post on using `.noop()` or `NoOp` implementations instead of passing `Optional` as an argument (PR #4830).
