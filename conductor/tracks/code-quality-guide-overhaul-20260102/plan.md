@@ -58,7 +58,7 @@ This plan outlines the systematic restructuring and rewriting of the blog into a
 
 - [x] **Task: Implement "Concurrency Contracts" Post** [b48324b]
     - Write the post on correct `InterruptedException` handling and restoring the interrupt flag (PR #4830).
-- [ ] **Task: Implement "Avoiding Tight Loops" Post**
+- [x] **Task: Implement "Avoiding Tight Loops" Post** [7d436b3]
     - Write the post on using `await/signal` patterns to preserve CPU (PR #4830).
 - [ ] **Task: Implement "Determinism" Post**
     - Write the post on why deterministic tie-breaking is critical for distributed systems (PR #136873).
