@@ -21,6 +21,13 @@ The Code Quality Guide is a living, opinionated platform for sharing synthesized
 ## Content Structure (Hybrid Model)
 The guide is organized into high-level **Modules** that provide narrative backbone and context, containing individual **Posts** formatted as prose narratives.
 
+### Established Modules
+- **Readability & Flow:** Focusing on the cognitive load of control flow and domain APIs.
+- **The Art of Abstraction:** Exploring encapsulation, polymorphism, and structural integrity.
+- **The Case Against Optionals:** Challenging the misuse of containers at architectural boundaries.
+- **Robust Testing:** Moving from interaction-based mocking to high-fidelity state verification.
+- **System Integrity:** Ensuring concurrency safety and distributed consensus.
+
 ### Implicit Narrative Arc
 While not explicitly labeled, every post should structurally follow this arc:
 1.  **The Challenge:** Introduce the anti-pattern or complexity through a narrative hook.
