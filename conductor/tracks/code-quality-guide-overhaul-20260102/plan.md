@@ -50,7 +50,7 @@ This plan outlines the systematic restructuring and rewriting of the blog into a
     - Write the post on why faking state is more robust than mocking internal calls ("Change Detector Tests") (PR #4649, #4830).
 - [x] **Task: Implement "High-Fidelity Fakes" Post** [caa4af3]
     - Write the post on using doubles that behave like real systems (dynamic tokens, unique IDs) (PR #144751).
-- [ ] **Task: Implement "Hardcoding Verification" Post**
+- [x] **Task: Implement "Hardcoding Verification" Post** [28c4260]
     - Write the post on eliminating logic from test verification code (PR #130845).
 - [ ] Task: Conductor - User Manual Verification 'Phase 5: Robust Testing Module' (Protocol in workflow.md)
 
