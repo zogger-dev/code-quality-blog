@@ -16,7 +16,7 @@ the theory is well-established, applying it effectively in a large, legacy
 codebase requires specific patterns. The following examples demonstrate how to
 move from obfuscated logic to clear storytelling in a real-world context.
 
-## The Trap of Monolithic Verification
+## The Validation Monolith
 
 The "Assert" phase is where the DRY principle frequently creates high cognitive
 barriers. A common anti-pattern is the **Validation Monolith**, a single helper
