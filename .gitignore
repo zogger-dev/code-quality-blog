@@ -1,5 +1,6 @@
 .env
 .gemini/
+.claude/
 
 # Hugo
 public/
