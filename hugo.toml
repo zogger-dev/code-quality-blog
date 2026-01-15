@@ -1,0 +1,42 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Cognitive Load'
+theme = 'PaperMod'
+
+[params]
+description = "Optimize for engineering at the speed of thought."
+author = "Progger Dev"
+showReadingTime = true
+showPostNavLinks = true
+showBreadCrumbs = true
+showCodeCopyButtons = true
+
+[params.homeInfoParams]
+Title = "Cognitive Load"
+Content = "Optimize for engineering at the speed of thought."
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/progger-dev/code-quality-blog"
+
+[markup]
+[markup.highlight]
+style = "monokai"
+lineNos = false
+codeFences = true
+guessSyntax = true
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "Posts"
+url = "/posts/"
+weight = 2
+
+[[menu.main]]
+name = "Categories"
+url = "/categories/"
+weight = 3
