@@ -1,4 +1,9 @@
-# Composition over Inheritance
+---
+title: "Composition over Inheritance"
+date: 2025-01-07
+categories: ["Abstraction"]
+draft: true
+---
 
 "Composition over Inheritance" is a classic principle of object-oriented design.
 While inheritance is often the first tool developers reach for when sharing

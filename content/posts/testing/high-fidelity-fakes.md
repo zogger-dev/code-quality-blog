@@ -1,4 +1,9 @@
-# High-Fidelity Fakes: Mirrors of Reality
+---
+title: "High-Fidelity Fakes: Mirrors of Reality"
+date: 2025-01-12
+categories: ["Testing"]
+draft: true
+---
 
 Unit testing often relies on test doubles to isolate code from external dependencies. While simple mocks and stubs are easy to create, they often suffer from the **Stub Paradox**: they are so predictable that they hide the very bugs you are trying to find. To build a truly resilient system, we must instead invest in **High-Fidelity Fakes**.
 

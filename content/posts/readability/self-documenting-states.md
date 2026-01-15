@@ -1,4 +1,8 @@
-# Beyond Booleans: Modeling Feature Flags as Data
+---
+title: "Beyond Booleans: Modeling Feature Flags as Data"
+date: 2025-01-02
+categories: ["Readability"]
+---
 
 Software development is often a battle against the "mystery value." One of the
 most aggressive ways intent is obfuscated is by over-relying on primitive

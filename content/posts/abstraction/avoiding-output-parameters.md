@@ -1,4 +1,9 @@
-# Avoiding Output Parameters
+---
+title: "Avoiding Output Parameters"
+date: 2025-01-08
+categories: ["Abstraction"]
+draft: true
+---
 
 Software design is often a quest for clarity in data flow. We want to be able to
 look at a method and understand exactly what it takes in and what it produces.

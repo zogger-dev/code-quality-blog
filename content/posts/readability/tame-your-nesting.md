@@ -1,4 +1,8 @@
-# Tame Your Nesting
+---
+title: "Tame Your Nesting"
+date: 2025-01-03
+categories: ["Readability"]
+---
 
 Deeply nested code is a hiding place for technical debt. Every level of
 indentation adds a mental "stack frame" that the reader must maintain just to

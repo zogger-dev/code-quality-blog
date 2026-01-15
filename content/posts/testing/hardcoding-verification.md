@@ -1,4 +1,9 @@
-# Hardcoding Verification: Eliminating Logic from Tests
+---
+title: "Hardcoding Verification: Eliminating Logic from Tests"
+date: 2025-01-13
+categories: ["Testing"]
+draft: true
+---
 
 Software engineering is about finding abstractions that reduce duplication. We are trained to avoid hardcoded values and seek generalized solutions. However, in the world of testing, this instinct can lead to a dangerous trap: **Reflected Logic**. When you use logic to calculate your expected result, you are no longer testing your code; you are merely testing your ability to write the same logic twice.
 

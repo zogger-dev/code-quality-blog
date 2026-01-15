@@ -1,4 +1,9 @@
-# Domain-Specific Semantics
+---
+title: "Domain-Specific Semantics"
+date: 2025-01-05
+categories: ["Abstraction"]
+draft: true
+---
 
 Abstractions are the building blocks of a maintainable system. However, not all
 abstractions are created equal. One of the most common mistakes in software

@@ -1,4 +1,9 @@
-# Determinism: The Foundation of Distributed Integrity
+---
+title: "Determinism: The Foundation of Distributed Integrity"
+date: 2025-01-16
+categories: ["System Integrity"]
+draft: true
+---
 
 In a distributed system, consensus is everything. Whether you are electing a leader, selecting a sync source, or deciding which node is "ready," multiple independent actors must be able to reach the same conclusion. One of the most subtle ways systems fail is through the lack of **Determinism**—specifically in how they handle ties.
 

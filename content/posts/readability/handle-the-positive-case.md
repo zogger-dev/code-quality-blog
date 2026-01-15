@@ -1,4 +1,8 @@
-# The Power of Positive Assertions
+---
+title: "The Power of Positive Assertions"
+date: 2025-01-01
+categories: ["Readability"]
+---
 
 Writing readable code is an exercise in **clarity**. When a reader opens a file,
 their primary goal is to trace the execution path and understand _what happens

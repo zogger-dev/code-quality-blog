@@ -1,4 +1,9 @@
-# Avoiding Tight Loops: Stop Spinning your CPU
+---
+title: "Avoiding Tight Loops: Stop Spinning your CPU"
+date: 2025-01-15
+categories: ["System Integrity"]
+draft: true
+---
 
 In the world of low-level systems programming, efficiency is often equated with speed. However, there is one pattern that is technically fast but practically disastrous: the **Tight Loop** (or busy-wait). When you spin the CPU while waiting for a condition to change, you aren't being "efficient"—you are wasting power, generating heat, and starving other threads of the resources they need to actually do work.
 

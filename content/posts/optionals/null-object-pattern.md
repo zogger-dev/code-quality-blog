@@ -1,4 +1,9 @@
-# The Null Object Pattern vs. Optional Arguments
+---
+title: "The Null Object Pattern vs. Optional Arguments"
+date: 2025-01-09
+categories: ["Optionals"]
+draft: true
+---
 
 In modern Java, `Optional` has become the standard tool for expressing that a value might be missing. It is a powerful way to avoid the dreaded `NullPointerException` and force callers to handle the empty case. However, there is a common architectural boundary where `Optional` should almost never be used: as a method or constructor argument.
 

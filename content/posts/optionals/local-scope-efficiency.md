@@ -1,4 +1,9 @@
-# Local Scope Efficiency
+---
+title: "Local Scope Efficiency"
+date: 2025-01-10
+categories: ["Optionals"]
+draft: true
+---
 
 The introduction of `Optional` in Java 8 was a watershed moment for API design. It gave us a formal way to express the absence of a value in method returns. However, like any powerful tool, it is often overused. One of the most common misapplications is the use of `Optional` for purely local variables, where a simple null check or a membership test would be cleaner and more efficient.
 

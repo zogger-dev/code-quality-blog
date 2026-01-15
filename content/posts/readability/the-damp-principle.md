@@ -1,4 +1,8 @@
-# The DAMP Principle
+---
+title: "The DAMP Principle"
+date: 2025-01-04
+categories: ["Readability"]
+---
 
 In software engineering, "DRY" (Don't Repeat Yourself) is a fundamental mantra.
 We are taught to extract shared logic and eliminate duplication to ensure

@@ -1,4 +1,9 @@
-# State vs. Interaction: The Case Against Brittle Mocks
+---
+title: "State vs. Interaction: The Case Against Brittle Mocks"
+date: 2025-01-11
+categories: ["Testing"]
+draft: true
+---
 
 Unit testing is often presented as a choice between two competing philosophies: **Interaction Verification** (Mocking) and **State Verification** (Faking). While both have their place, a common pitfall in large-scale systems is the over-reliance on mocks to verify internal implementation details. This leads to the dreaded **Change Detector Test**—a test that fails not because the behavior is broken, but because the implementation changed.
 

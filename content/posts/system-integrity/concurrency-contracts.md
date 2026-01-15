@@ -1,4 +1,9 @@
-# Concurrency Contracts: Handling InterruptedException
+---
+title: "Concurrency Contracts: Handling InterruptedException"
+date: 2025-01-14
+categories: ["System Integrity"]
+draft: true
+---
 
 In a multi-threaded system, thread interruption is the primary mechanism for cooperative cancellation. When you call a blocking method like `Thread.sleep()` or `BlockingQueue.take()`, you are entering into a contract: you must respect the caller's request to stop. However, many developers break this contract by incorrectly handling `InterruptedException`, leading to "zombie threads" that refuse to die and prevent a clean system shutdown.
 

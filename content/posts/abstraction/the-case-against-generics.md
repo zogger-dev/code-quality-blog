@@ -1,4 +1,9 @@
-# The Case Against Generics
+---
+title: "The Case Against Generics"
+date: 2025-01-06
+categories: ["Abstraction"]
+draft: true
+---
 
 Generics are often hailed as the pinnacle of type safety in modern programming.
 They allow us to write reusable, type-checked code that works across multiple
