@@ -24,7 +24,7 @@ codeFences = true
 guessSyntax = true
 
 [permalinks]
-posts = "/posts/:filename/"
+posts = "/posts/:contentbasename/"
 
 [taxonomies]
 tag = "tags"
