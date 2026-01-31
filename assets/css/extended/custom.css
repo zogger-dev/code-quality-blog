@@ -218,28 +218,25 @@ blockquote {
   padding: 1rem 1.5rem !important;
 }
 
-/* Light mode code block refinement */
-:root:not(.dark):not([data-theme='dark']) .post-content pre,
+/* Ensure code blocks always have a dark background for readability with Dracula syntax highlighting */
+.post-content pre,
+.post-content .highlight {
+  background: #282a36 !important;
+  /* Dracula Background */
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.post-content code {
+  color: #f8f8f2 !important;
+  /* Dracula Foreground */
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.9em;
+}
+
+/* Reverting light mode specific invert filter as requested */
 :root:not(.dark):not([data-theme='dark']) .post-content .highlight {
-  background: #f1f5f9 !important;
-  /* Slate 100 */
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-:root:not(.dark):not([data-theme='dark']) .post-content code {
-  color: #0f172a !important;
-  /* Slate 900 */
-}
-
-/* Ensure syntax highlighting tokens are still readable if forced to light */
-/* If the theme is Dracula, we might need to filter or invert slightly for light mode if tokens are white */
-:root:not(.dark):not([data-theme='dark']) .post-content .highlight {
-  filter: invert(0.9) hue-rotate(180deg) brightness(1.1);
-  background: #ffffff !important;
-}
-
-:root:not(.dark):not([data-theme='dark']) .post-content .highlight pre {
-  background: transparent !important;
+  filter: none;
 }
 
 /* Epigraph Refinement */
