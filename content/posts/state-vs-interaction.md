@@ -1,7 +1,7 @@
 ---
 title: "State vs. Interaction: The Case Against Brittle Mocks"
 date: 2025-01-11
-categories: ["Testing"]
+tags: ["testing"]
 draft: true
 ---
 

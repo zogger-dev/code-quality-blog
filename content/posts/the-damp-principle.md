@@ -1,7 +1,8 @@
 ---
 title: "The DAMP Principle"
 date: 2025-01-04
-categories: ["Readability"]
+tags: ["readability"]
+draft: true
 ---
 
 In software engineering, "DRY" (Don't Repeat Yourself) is a fundamental mantra.
@@ -12,7 +13,7 @@ boilerplate, we often inadvertently hide the very scenarios we are trying to
 verify. To build a robust test suite, we must instead prioritize **DAMP**
 (Descriptive And Meaningful Phrases).
 
-The concept of DAMP is not new. It was popularized by Google’s
+The concept of DAMP is not new. It was popularized by Google's
 [Testing on the Toilet](https://testing.googleblog.com/2019/12/testing-on-toilet-tests-too-dry-make.html)
 series and further explored in the book
 [Software Engineering at Google](https://abseil.io/resources/swe-book). While

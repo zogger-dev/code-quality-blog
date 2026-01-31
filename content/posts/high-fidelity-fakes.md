@@ -1,7 +1,7 @@
 ---
 title: "High-Fidelity Fakes: Mirrors of Reality"
 date: 2025-01-12
-categories: ["Testing"]
+tags: ["testing"]
 draft: true
 ---
 
@@ -59,7 +59,7 @@ Why are high-fidelity fakes worth the extra investment?
 2.  **Living Documentation:** A well-written fake acts as an executable specification of the dependency. It tells future developers exactly how the external system is expected to behave.
 3.  **Refactor Resilience:** Because high-fidelity fakes are implementation-agnostic, your tests remain valid even if you completely rewrite the internal logic of your service.
 
-The quality of your test suite is capped by the quality of your doubles. If your doubles are shallow and static, your tests will be brittle and blind. By investing in high-fidelity fakes that mirror real-system behavior, you turn your test suite into a powerful sandbox for exploring and validating your code’s intent.
+The quality of your test suite is capped by the quality of your doubles. If your doubles are shallow and static, your tests will be brittle and blind. By investing in high-fidelity fakes that mirror real-system behavior, you turn your test suite into a powerful sandbox for exploring and validating your code's intent.
 
 ## The Insight
 

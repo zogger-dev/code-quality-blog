@@ -1,7 +1,8 @@
 ---
 title: "Tame Your Nesting"
 date: 2025-01-03
-categories: ["Readability"]
+tags: ["readability"]
+draft: true
 ---
 
 Deeply nested code is a hiding place for technical debt. Every level of

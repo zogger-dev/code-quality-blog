@@ -1,7 +1,7 @@
 ---
 title: "Avoiding Tight Loops: Stop Spinning your CPU"
 date: 2025-01-15
-categories: ["System Integrity"]
+tags: ["system-integrity"]
 draft: true
 ---
 
@@ -9,7 +9,7 @@ In the world of low-level systems programming, efficiency is often equated with 
 
 ## The Spin Trap
 
-Consider a process designed to wait until a gate is closed before proceeding with a system crash. It’s easy to write a loop that constantly polls the state:
+Consider a process designed to wait until a gate is closed before proceeding with a system crash. It's easy to write a loop that constantly polls the state:
 
 ```java
 public void awaitCrash() {

@@ -1,7 +1,7 @@
 ---
 title: "The Case Against Generics"
 date: 2025-01-06
-categories: ["Abstraction"]
+tags: ["abstraction"]
 draft: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "The Null Object Pattern vs. Optional Arguments"
 date: 2025-01-09
-categories: ["Optionals"]
+tags: ["optionals"]
 draft: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Avoiding Output Parameters"
 date: 2025-01-08
-categories: ["Abstraction"]
+tags: ["abstraction"]
 draft: true
 ---
 
@@ -63,7 +63,7 @@ var params = getConfigMap();
 
 The data flow is now explicit. The reader can see exactly where the
 configuration comes from. By returning a new (and ideally immutable) object,
-we’ve made the data flow unidirectional and easy to trace.
+we've made the data flow unidirectional and easy to trace.
 
 ## The Synthesis
 

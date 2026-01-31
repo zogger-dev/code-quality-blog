@@ -1,7 +1,8 @@
 ---
 title: "Beyond Booleans: Modeling Feature Flags as Data"
 date: 2025-01-02
-categories: ["Readability"]
+tags: ["readability"]
+draft: true
 ---
 
 Software development is often a battle against the "mystery value." One of the
@@ -188,9 +189,9 @@ for (Feature feature : Feature.values()) {
 
 | Liability                | Record (Booleans)         | Builder Pattern                | Enum Model              |
 | :----------------------- | :------------------------ | :----------------------------- | :---------------------- |
-| **Positional Fragility** | 🔴 High                   | 🟡 Medium                      | 🟢 None (Named keys)    |
-| **Maintenance Tax**      | 🔴 High (Map every field) | 🟡 Medium (Update builder)     | 🟢 Low (Iterate values) |
-| **Blast Radius**         | 🔴 High (Break signature) | 🟡 Medium (Observability code) | 🟢 Zero (OCP Compliant) |
+| **Positional Fragility** | High                   | Medium                      | None (Named keys)    |
+| **Maintenance Tax**      | High (Map every field) | Medium (Update builder)     | Low (Iterate values) |
+| **Blast Radius**         | High (Break signature) | Medium (Observability code) | Zero (OCP Compliant) |
 
 ## Future Proofing
 

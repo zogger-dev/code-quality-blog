@@ -1,7 +1,7 @@
 ---
 title: "Composition over Inheritance"
 date: 2025-01-07
-categories: ["Abstraction"]
+tags: ["abstraction"]
 draft: true
 ---
 

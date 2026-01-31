@@ -1,19 +1,16 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://cognitive-load.dev/'
 languageCode = 'en-us'
 title = 'Cognitive Load'
 theme = 'PaperMod'
 
 [params]
 description = "Optimize for engineering at the speed of thought."
-author = "Progger Dev"
+author = "Pradeep Gollakota"
 showReadingTime = true
 showPostNavLinks = true
 showBreadCrumbs = true
 showCodeCopyButtons = true
-
-[params.homeInfoParams]
-Title = "Cognitive Load"
-Content = "Optimize for engineering at the speed of thought."
+comments = true
 
 [[params.socialIcons]]
 name = "github"
@@ -26,6 +23,12 @@ lineNos = false
 codeFences = true
 guessSyntax = true
 
+[permalinks]
+posts = "/posts/:filename/"
+
+[taxonomies]
+tag = "tags"
+
 [[menu.main]]
 name = "Home"
 url = "/"
@@ -35,8 +38,3 @@ weight = 1
 name = "Posts"
 url = "/posts/"
 weight = 2
-
-[[menu.main]]
-name = "Categories"
-url = "/categories/"
-weight = 3

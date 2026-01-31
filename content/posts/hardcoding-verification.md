@@ -1,7 +1,7 @@
 ---
 title: "Hardcoding Verification: Eliminating Logic from Tests"
 date: 2025-01-13
-categories: ["Testing"]
+tags: ["testing"]
 draft: true
 ---
 

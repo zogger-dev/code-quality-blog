@@ -1,7 +1,7 @@
 ---
 title: "Local Scope Efficiency"
 date: 2025-01-10
-categories: ["Optionals"]
+tags: ["optionals"]
 draft: true
 ---
 
@@ -24,11 +24,11 @@ public void compareStats(Map<String, Stats> allStats, String indexId) {
 }
 ```
 
-While this looks "modern," it introduces several hidden costs. First, we are **Boxing the Reference**. We've created two short-lived container objects just to perform a single check. Second, we've increased **Syntactic Noise**. We now have to call `.get()` to access the actual data we need. The `Optional` container hasn't protected us from anything; it’s merely acted as a more verbose version of a null check.
+While this looks "modern," it introduces several hidden costs. First, we are **Boxing the Reference**. We've created two short-lived container objects just to perform a single check. Second, we've increased **Syntactic Noise**. We now have to call `.get()` to access the actual data we need. The `Optional` container hasn't protected us from anything; it's merely acted as a more verbose version of a null check.
 
 ## The Resolution: Embrace the Language
 
-In a purely local context, where there is no danger of a reference leaking or being misused by an external caller, we should embrace the language’s native tools.
+In a purely local context, where there is no danger of a reference leaking or being misused by an external caller, we should embrace the language's native tools.
 
 ```java
 public void compareStats(Map<String, Stats> allStats, String indexId) {
@@ -53,7 +53,7 @@ Why is `Optional` often the wrong choice for local scope?
 2.  **No Safety Gain:** The primary goal of `Optional` is to force a caller to handle the empty case. In a local method body, you *are* the caller. You already know whether the value can be null, and you are responsible for handling it immediately.
 3.  **Syntactic Friction:** The fluent API (`.map()`, `.filter()`) is fantastic when you are chaining operations. But for a simple conditional check, it often results in more complex code than a standard `if` statement.
 
-`Optional` was designed to be a **return type**. It is a communication tool between a provider and a consumer. When you use it inside a method body for temporary storage, you are using a shipping container to move items across your own living room. It works, but it’s unnecessarily cumbersome.
+`Optional` was designed to be a **return type**. It is a communication tool between a provider and a consumer. When you use it inside a method body for temporary storage, you are using a shipping container to move items across your own living room. It works, but it's unnecessarily cumbersome.
 
 ## The Insight
 

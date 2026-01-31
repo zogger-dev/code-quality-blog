@@ -1,7 +1,7 @@
 ---
 title: "Concurrency Contracts: Handling InterruptedException"
 date: 2025-01-14
-categories: ["System Integrity"]
+tags: ["system-integrity"]
 draft: true
 ---
 
@@ -9,7 +9,7 @@ In a multi-threaded system, thread interruption is the primary mechanism for coo
 
 ## The Broken Contract
 
-Consider a background worker that processes a queue of tasks. It’s common to see code that swallows the interruption signal just to keep the loop running:
+Consider a background worker that processes a queue of tasks. It's common to see code that swallows the interruption signal just to keep the loop running:
 
 ```java
 public void run() {
@@ -41,7 +41,7 @@ public void run() {
             // Restore the contract: Tell the thread it was interrupted
             Thread.currentThread().interrupt();
             log.info("Worker interrupted, shutting down...");
-            break; 
+            break;
         }
     }
 }
@@ -61,4 +61,4 @@ If you are writing a library or a low-level utility, you should almost always pr
 
 ## The Insight
 
-Thread interruption is not a suggestion; it’s a protocol. Don't be the developer who creates zombie threads. If you catch an `InterruptedException`, either throw it or restore it. Respect the contract, and your system will remain under control.
+Thread interruption is not a suggestion; it's a protocol. Don't be the developer who creates zombie threads. If you catch an `InterruptedException`, either throw it or restore it. Respect the contract, and your system will remain under control.

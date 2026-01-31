@@ -1,7 +1,7 @@
 ---
 title: "Domain-Specific Semantics"
 date: 2025-01-05
-categories: ["Abstraction"]
+tags: ["abstraction"]
 draft: true
 ---
 

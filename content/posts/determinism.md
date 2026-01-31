@@ -1,7 +1,7 @@
 ---
 title: "Determinism: The Foundation of Distributed Integrity"
 date: 2025-01-16
-categories: ["System Integrity"]
+tags: ["system-integrity"]
 draft: true
 ---
 
