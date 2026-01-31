@@ -29,6 +29,19 @@ Researchers introduced PyQu, a tool that uses machine learning to identify "qual
 ## Already Cited in Mission Statement
 
 - Minelli et al. (2015) - 70% reading, 15% writing code
-- Daniotti et al. (2026) - AI adoption: seniors +3.6% productivity, juniors 0%
-- LaToza et al. (2006) - Mental models research
-- Cui et al. (2024) - Task completion speed with AI
+- Daniotti et al. (2026) - AI adoption:- Cui et al. (2024) - Task completion speed with AI
+- PyQu Research Team. (2026) - Structural metrics for quality
+
+---
+
+## Post Refinement Ideas & Backlog
+
+### Optional is Not a Replacement for Null
+- **Target Post**: `local-scope-efficiency.md`
+- **Context**: Address the widespread pattern of wrapping local nulls in `Optional` just to achieve pseudo-null-safety.
+- **Thesis**: `Optional` is a communication tool for return types, not a local variable container.
+
+### The Nuance of Output Parameters
+- **Target Post**: `avoiding-output-parameters.md`
+- **Context**: While avoiding them is a foundational principle (especially for junior engineers), there are valid high-performance exceptions.
+- **Key Addition**: Show examples of when you *should* use them (e.g., high-performance database code where a single buffer is allocated once and passed in for mutations/filling).

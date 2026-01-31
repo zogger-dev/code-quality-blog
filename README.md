@@ -34,6 +34,4 @@ hugo
 - [Hardcoding Verification: Eliminating Logic from Tests](./content/posts/hardcoding-verification.md)
 
 ## Module: System Integrity
-- [Concurrency Contracts: Handling InterruptedException](./content/posts/concurrency-contracts.md)
-- [Avoiding Tight Loops: Stop Spinning your CPU](./content/posts/avoiding-tight-loops.md)
 - [Determinism: The Foundation of Distributed Integrity](./content/posts/determinism.md)
