@@ -1,8 +1,8 @@
 ---
 title: "The Power of Positive Assertions"
-date: 2025-01-01
+date: 2026-01-31
 tags: ["readability"]
-draft: true
+draft: false
 ---
 
 Every `if-else` block tells a story with two chapters. The positive branch runs
