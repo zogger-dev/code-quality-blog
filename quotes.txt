@@ -1,0 +1,23 @@
+# Quotes for Future Use
+
+These are quotes relevant to code quality, readability, and cognitive load themes.
+
+---
+
+"Programs are meant to be read by humans and only incidentally for computers to execute."
+— Donald Knuth
+
+"Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it."
+— Brian Kernighan
+
+"There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies."
+— Tony Hoare
+
+"Simplicity is a prerequisite for reliability."
+— Edsger Dijkstra
+
+"The computing scientist's main challenge is not to get confused by the complexities of his own making."
+— Edsger Dijkstra
+
+"I have made this longer than usual because I have not had time to make it shorter."
+— Blaise Pascal

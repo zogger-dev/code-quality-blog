@@ -1,0 +1,56 @@
+/* Hero styling for home page */
+.hero {
+  text-align: center;
+  padding: 3rem 0 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  letter-spacing: -0.02em;
+  color: var(--primary);
+}
+
+.hero-tagline {
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--secondary);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Epigraph styling */
+.epigraph {
+  margin: 2rem auto 3rem;
+  max-width: 80%;
+  text-align: center;
+}
+
+.epigraph blockquote {
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-style: italic;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--secondary);
+}
+
+.epigraph blockquote p {
+  margin: 0;
+}
+
+.epigraph cite {
+  display: block;
+  margin-top: 0.75rem;
+  font-style: normal;
+  font-size: 0.95rem;
+  color: var(--secondary);
+}
+
+.epigraph cite::before {
+  content: "— ";
+}

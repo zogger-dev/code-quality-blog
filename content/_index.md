@@ -1,5 +1,6 @@
 ---
 title: "Cognitive Load"
+description: "Optimize for engineering at the speed of thought."
 ---
 
 **The most important metric to optimize for in software development is cognitive load.**

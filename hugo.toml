@@ -17,6 +17,9 @@ name = "github"
 url = "https://github.com/progger-dev/code-quality-blog"
 
 [markup]
+[markup.goldmark.renderer]
+unsafe = true
+
 [markup.highlight]
 style = "monokai"
 lineNos = false
@@ -33,8 +36,3 @@ tag = "tags"
 name = "Home"
 url = "/"
 weight = 1
-
-[[menu.main]]
-name = "Posts"
-url = "/posts/"
-weight = 2
