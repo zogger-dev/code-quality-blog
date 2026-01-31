@@ -1,46 +1,212 @@
-/* Hero styling for home page */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary: #4f46e5;
+  /* Indigo 600 */
+  --primary-hover: #4338ca;
+  /* Indigo 700 */
+  --secondary: #64748b;
+  /* Slate 500 */
+  --tertiary: #94a3b8;
+  /* Slate 400 */
+  --bg-gradient: linear-gradient(135deg, #4f46e5, #9333ea);
+  --card-bg: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.05);
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+  /* Font overrides */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --nav-font-family: 'Outfit', var(--font-family);
+}
+
+.dark {
+  --primary: #818cf8;
+  /* Indigo 400 */
+  --primary-hover: #a5b4fc;
+  /* Indigo 300 */
+  --secondary: #94a3b8;
+  /* Slate 400 */
+  --tertiary: #475569;
+  /* Slate 600 */
+  --card-bg: #1d1e20;
+  --card-border: rgba(255, 255, 255, 0.05);
+  --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header & Nav */
+.header {
+  background: rgba(var(--theme), 0.8) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--card-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo a {
+  font-family: var(--nav-font-family);
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  line-height: 1.2;
+  padding-bottom: 0.1em;
+  background: var(--bg-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Hero Section */
 .hero {
   text-align: center;
-  padding: 3rem 0 2rem;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid var(--border);
+  padding: 4rem 1rem 3rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--card-border);
 }
 
 .hero-title {
-  font-size: 3rem;
-  font-weight: 700;
+  font-family: var(--nav-font-family);
+  font-size: 3.5rem;
+  font-weight: 800;
   margin: 0 0 1rem;
-  letter-spacing: -0.02em;
-  color: var(--primary);
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  padding-bottom: 0.1em;
+  background: var(--bg-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-tagline {
-  font-size: 1.35rem;
-  font-style: italic;
+  font-size: 1.25rem;
   color: var(--secondary);
-  margin: 0;
+  max-width: 600px;
+  margin: 1rem auto 0;
   font-weight: 400;
+  line-height: 1.5;
 }
 
-/* Epigraph styling */
+/* Post Cards */
+.post-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.post-card {
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: var(--primary);
+}
+
+.post-card-title {
+  font-family: var(--nav-font-family);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem;
+  color: var(--content);
+  transition: color 0.2s;
+}
+
+.post-card:hover .post-card-title {
+  color: var(--primary);
+}
+
+.post-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--secondary);
+  margin-bottom: 0.75rem;
+}
+
+.post-card-summary {
+  font-size: 0.95rem;
+  color: var(--content);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Tags */
+.post-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tag-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  background: rgba(79, 70, 229, 0.1);
+  color: var(--primary);
+  border: 1px solid rgba(79, 70, 229, 0.1);
+}
+
+.dark .tag-pill {
+  background: rgba(129, 140, 248, 0.1);
+  border-color: rgba(129, 140, 248, 0.2);
+}
+
+/* Post Styling */
+.post-content h1,
+.post-content h2,
+.post-content h3 {
+  font-family: var(--nav-font-family);
+  letter-spacing: -0.02em;
+}
+
+.post-content p {
+  line-height: 1.7;
+}
+
+blockquote {
+  border-left: 4px solid var(--primary) !important;
+  background: rgba(79, 70, 229, 0.05) !important;
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.5rem !important;
+}
+
+/* Epigraph Refinement */
 .epigraph {
   margin: 2rem auto 3rem;
   max-width: 80%;
   text-align: center;
+  padding: 1rem 0;
 }
 
 .epigraph blockquote {
-  border: none;
-  padding: 0;
-  margin: 0;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-family: var(--nav-font-family);
+  font-weight: 500;
   font-style: italic;
   font-size: 1.25rem;
   line-height: 1.6;
   color: var(--secondary);
-}
-
-.epigraph blockquote p {
-  margin: 0;
 }
 
 .epigraph cite {
@@ -48,9 +214,38 @@
   margin-top: 0.75rem;
   font-style: normal;
   font-size: 0.95rem;
-  color: var(--secondary);
+  color: var(--tertiary);
 }
 
 .epigraph cite::before {
   content: "— ";
+}
+
+/* Micro-animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.post-card {
+  animation: fadeIn 0.5s ease-out backwards;
+}
+
+.post-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.post-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.post-card:nth-child(3) {
+  animation-delay: 0.3s;
 }
