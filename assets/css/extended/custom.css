@@ -220,17 +220,40 @@ blockquote {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   margin: 2.5rem 0;
+  overflow: hidden;
 }
 
-.post-content code {
+.post-content .highlight pre {
+  background: transparent !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 1.25rem !important;
+}
+
+.post-content pre:not(.highlight pre) {
+  padding: 1.25rem;
+}
+
+/* Inline code styling */
+.post-content :not(pre)>code {
+  background: rgba(79, 70, 229, 0.08);
+  color: var(--primary) !important;
+  border-radius: 6px;
+  padding: 0.2rem 0.4rem;
+  font-family: ui-monospace, 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.9em;
+}
+
+html[data-theme='dark'] .post-content :not(pre)>code {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f8f8f2 !important;
+}
+
+.post-content pre code {
   color: #f8f8f2 !important;
   /* Dracula fg */
   font-family: ui-monospace, 'JetBrains Mono', 'Fira Code', monospace;
   font-size: 0.9em;
-  padding: 0.2rem 0.4rem;
-}
-
-.post-content pre code {
   padding: 0;
   background: transparent !important;
 }

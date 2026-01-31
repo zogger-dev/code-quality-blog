@@ -17,23 +17,35 @@
   {{- end }}
 </article>
 
-{{- $posts := where site.RegularPages "Section" "posts" }}
-{{- if $posts }}
-<section class="post-single">
-  <header class="post-header">
-    <h2 class="post-title">Posts</h2>
-  </header>
-  <ul class="post-content">
-    {{- range $posts }}
-    <li>
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-      {{- range .Params.tags }}
-      <code>{{ . }}</code>
+  {{- $posts := where site.RegularPages "Section" "posts" }}
+  {{- if $posts }}
+  <section class="post-single">
+    <header class="post-header">
+      <h2 class="post-title">Deep Dives</h2>
+    </header>
+    <div class="post-card-list">
+      {{- range $posts }}
+      <a class="post-card" href="{{ .Permalink }}">
+        <h3 class="post-card-title">{{ .Title }}</h3>
+        <div class="post-card-meta">
+          <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+          <span>&middot;</span>
+          <span>{{ .ReadingTime }} min read</span>
+        </div>
+        {{- if .Summary }}
+        <p class="post-card-summary">{{ .Summary | plainify | truncate 160 }}</p>
+        {{- end }}
+        {{- with .Params.tags }}
+        <div class="post-card-tags">
+          {{- range . }}
+          <span class="tag-pill">{{ . }}</span>
+          {{- end }}
+        </div>
+        {{- end }}
+      </a>
       {{- end }}
-    </li>
-    {{- end }}
-  </ul>
-</section>
-{{- end }}
+    </div>
+  </section>
+  {{- end }}
 
 {{- end }}
