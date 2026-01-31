@@ -20,7 +20,9 @@
   --nav-font-family: 'Outfit', var(--font-family);
 }
 
-.dark {
+/* Support both .dark class and [data-theme='dark'] for various theme switching implementations */
+.dark,
+[data-theme='dark'] {
   --primary: #818cf8;
   /* Indigo 400 */
   --primary-hover: #a5b4fc;
@@ -50,6 +52,32 @@ body {
   z-index: 100;
 }
 
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.logo-switches {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  /* Fill the nav height for centering */
+}
+
 .logo a {
   font-family: var(--nav-font-family);
   font-weight: 800;
@@ -58,6 +86,7 @@ body {
   padding-bottom: 0.1em;
   background: var(--bg-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -79,6 +108,7 @@ body {
   padding-bottom: 0.1em;
   background: var(--bg-gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -186,6 +216,30 @@ blockquote {
   background: rgba(79, 70, 229, 0.05) !important;
   border-radius: 0 8px 8px 0;
   padding: 1rem 1.5rem !important;
+}
+
+/* Light mode code block refinement */
+:root:not(.dark):not([data-theme='dark']) .post-content pre,
+:root:not(.dark):not([data-theme='dark']) .post-content .highlight {
+  background: #f1f5f9 !important;
+  /* Slate 100 */
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+:root:not(.dark):not([data-theme='dark']) .post-content code {
+  color: #0f172a !important;
+  /* Slate 900 */
+}
+
+/* Ensure syntax highlighting tokens are still readable if forced to light */
+/* If the theme is Dracula, we might need to filter or invert slightly for light mode if tokens are white */
+:root:not(.dark):not([data-theme='dark']) .post-content .highlight {
+  filter: invert(0.9) hue-rotate(180deg) brightness(1.1);
+  background: #ffffff !important;
+}
+
+:root:not(.dark):not([data-theme='dark']) .post-content .highlight pre {
+  background: transparent !important;
 }
 
 /* Epigraph Refinement */
