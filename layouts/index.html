@@ -19,4 +19,23 @@
   {{- end }}
 </article>
 
+{{- $posts := where site.RegularPages "Section" "posts" }}
+{{- if $posts }}
+<section class="post-single">
+  <header class="post-header">
+    <h2 class="post-title">Posts</h2>
+  </header>
+  <ul class="post-content">
+    {{- range $posts }}
+    <li>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      {{- range .Params.tags }}
+      <code>{{ . }}</code>
+      {{- end }}
+    </li>
+    {{- end }}
+  </ul>
+</section>
+{{- end }}
+
 {{- end }}
