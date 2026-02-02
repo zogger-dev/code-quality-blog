@@ -1,0 +1,8 @@
+<div class="code-wrap {{ .Get "type" }} scroll-reveal">
+    <div class="code-label">
+        <span>{{ .Get "label" }}</span>
+    </div>
+    <div class="code-content">
+        {{ .Inner | markdownify }}
+    </div>
+</div>

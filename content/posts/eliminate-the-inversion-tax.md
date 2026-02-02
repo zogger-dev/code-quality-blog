@@ -1,5 +1,5 @@
 ---
-title: "The Power of Positive Assertions"
+title: "Eliminate the Inversion Tax"
 date: 2026-01-31
 tags: ["readability"]
 draft: false
@@ -13,6 +13,8 @@ case, and readers must mentally flip the narrative to follow along.
 ## The Inversion Tax
 
 Consider a payment processor migrating to a new gateway:
+
+{{< code type="bad" label="Example (Misaligned)" >}}
 
 ```java
 public void processPayment(Payment payment) {
@@ -28,6 +30,8 @@ public void processPayment(Payment payment) {
 }
 ```
 
+{{< /code >}}
+
 The branches are misaligned. The condition asks "is modern flow enabled?" but
 the positive branch handles the legacy case. The reader must spot the `!`
 operator, mentally invert the question, and map the negated result back to the
@@ -38,6 +42,8 @@ The condition asks about modern. The branch handles legacy. The reader must
 invert the question to follow the answer.
 
 Swapping the branches aligns the code with its intent:
+
+{{< code type="good" label="Improved (Aligned)" >}}
 
 ```java
 public void processPayment(Payment payment) {
@@ -53,6 +59,8 @@ public void processPayment(Payment payment) {
 }
 ```
 
+{{< /code >}}
+
 Now the positive branch handles the positive case. When the modern flow is
 enabled, we use the modern gateway. The code reads as it thinks.
 
@@ -61,38 +69,18 @@ reader think once.
 
 ## The Guard Clause Exception
 
-If negation incurs a tax, should we _never_ invert a conditional? Not quite.
+If negation incurs a tax, should we never invert a conditional? Not quite.
 **Guard clauses** are the exception—and for good reason.
 
 Consider a permission check in a `DocumentService`:
 
-```java
-public void publish(Document doc, User user) {
-    if (user.hasRole(Role.EDITOR)) {
-        doc.setState(State.PUBLISHED);
-        doc.save();
-    } else {
-        throw new UnauthorizedException("User cannot publish");
-    }
-}
-```
+{{< comparison neg="The Awkward Way" pos="The Guard Way" >}} Indent the core
+logic behind a positive check, pushing error handling to a distant 'else' block.
 
-The positive branch handles the happy path, but the structure is awkward. The
-core logic is indented behind a gatekeeper condition, and the exception handling
-sits in an `else` block that feels like an afterthought.
+---
 
-Inverting the condition creates a **guard clause**:
-
-```java
-public void publish(Document doc, User user) {
-    if (!user.hasRole(Role.EDITOR)) {
-        throw new UnauthorizedException("User cannot publish");
-    }
-
-    doc.setState(State.PUBLISHED);
-    doc.save();
-}
-```
+Invert the condition to "bail out" immediately, signifying that negation
+represents an exceptional scenario. {{< /comparison >}}
 
 Why doesn't the negation feel costly here? Because guard clauses handle
 **exceptional situations**, and our mental model already frames them that way.
@@ -110,6 +98,8 @@ The value of guard clauses multiplies with multiple validations. Suppose our
 `publish` method also needs to check the document's state. Nested conditions
 push the core logic deeper, creating the "arrowhead" anti-pattern:
 
+{{< code type="bad" label="Deep Nesting" >}}
+
 ```java
 public void publish(Document doc, User user) {
     if (user.hasRole(Role.EDITOR)) {
@@ -125,7 +115,11 @@ public void publish(Document doc, User user) {
 }
 ```
 
+{{< /code >}}
+
 Stacking guard clauses flattens the structure:
+
+{{< code type="neutral" label="Precondition Checklist" >}}
 
 ```java
 public void publish(Document doc, User user) {
@@ -142,6 +136,8 @@ public void publish(Document doc, User user) {
 }
 ```
 
+{{< /code >}}
+
 The method now reads as a checklist of preconditions. But both guards carry the
 inversion tax.
 
@@ -150,6 +146,8 @@ inversion tax.
 Can we eliminate these negations? Sometimes—by designing our domain API to
 support **positive assertions**. Instead of negating "has role," we provide a
 method that describes the guarded state directly:
+
+{{< code type="good" label="Positive Guard Clause" >}}
 
 ```java
 public void publish(Document doc, User user) {
@@ -166,6 +164,8 @@ public void publish(Document doc, User user) {
 }
 ```
 
+{{< /code >}}
+
 The first guard now reads naturally: _"If the user lacks the editor role..."_
 
 But what about the document check? A document might be in draft, published, or
@@ -177,35 +177,36 @@ linearity, and `!doc.isDraft()` is clear enough.
 
 ### The Trade-Off
 
-Adding methods like `lacksRole` or `isMissing` increases API surface area. We
-shouldn't double every interface just to avoid `!`. But for the right cases, the
-readability gains outweigh the cost.
+Adding positive-assertion methods increases API surface area. This decision
+should be a technical heuristic based on context:
 
-The more a class appears in guard clauses, the more a helper method pays off.
-The less it appears, the less it's worth the API surface.
+{{< step-list >}} {{< step num="1" title="High-traffic domain objects" >}} If a
+class appears in guard clauses across the codebase, a helper method pays
+dividends everywhere. {{< /step >}}
 
-When to invest in positive-assertion methods:
+{{< step num="2" title="Critical control flows" >}} Authorization, validation,
+and error handling deserve maximum clarity. {{< /step >}}
 
-- **High-traffic domain objects.** If a class appears in guard clauses across
-  the codebase, a helper method pays dividends everywhere.
-- **Critical control flows.** Authorization, validation, and error handling
-  deserve maximum clarity.
-- **Natural negative states.** When the domain has a clear concept for the
-  absence (`lacksRole`, `isMissing`, `isUnknown`), model it explicitly.
+{{< step num="3" title="Natural negative states" >}} When the domain has a clear
+concept for the absence (`lacksRole`, `isMissing`, `isUnknown`), model it
+explicitly. {{< /step >}} {{< /step-list >}}
 
-When to skip them:
+{{< callout title="When to Defer" >}}
 
-- **One-off checks.** A single `!` in an isolated method isn't worth a new API.
-- **Awkward inverses.** As we saw with `!doc.isDraft()`, forcing a positive
+- **One-off checks:** Isolated negations don't warrant API expansion.
+- **Awkward inverses:** As we saw with `!doc.isDraft()`, forcing a positive
   assertion can be worse than the negation it replaces.
-- **Standard library types.** Don't wrap `!list.isEmpty()` in production code—
-  the idiom is well-known and the tax is low. That said, fluent assertion
-  libraries like Truth or Hamcrest do provide methods like `isNotEmpty()` for
-  the subjects of standard library types. In test code, where assertions are
-  plentiful and readability is paramount, these helpers shine. The context
-  matters.
+- **Standard library types:** Don't wrap `!list.isEmpty()` in production
+  code—the idiom is well-known and the tax is low. In test code, where
+  assertions are plentiful and readability is paramount, these helpers shine.
+  The context matters. {{< /callout >}}
 
 ---
 
-Negation is not the enemy. Misalignment is. When the code reads as it thinks,
-the reader doesn't have to.
+Readability is rarely about absolute rules; it's about the cumulative weight of
+design decisions. The goal is to ensure code reads as it thinks.
+
+Whether you’re flattening an arrowhead with a guard clause or expanding your API
+to support a `lacksRole()` helper, the goal remains the same: eliminating the
+hidden tax on comprehension. Negation is not the enemy. Misalignment is. When
+the code reads as it thinks, the reader doesn't have to.

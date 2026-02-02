@@ -1,0 +1,7 @@
+<div class="step-card">
+    <div class="step-num">{{ .Get "num" }}</div>
+    <div class="step-content">
+        <h4>{{ .Get "title" }}</h4>
+        <p>{{ .Inner | markdownify }}</p>
+    </div>
+</div>

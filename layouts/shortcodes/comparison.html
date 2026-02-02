@@ -1,0 +1,11 @@
+{{ $parts := split .Inner "---" }}
+<div class="comparison-grid scroll-reveal">
+    <div class="comparison-card neg">
+        <span class="card-tag neg">{{ .Get "neg" }}</span>
+        <p>{{ index $parts 0 | markdownify }}</p>
+    </div>
+    <div class="comparison-card pos">
+        <span class="card-tag pos">{{ .Get "pos" }}</span>
+        <p>{{ index $parts 1 | markdownify }}</p>
+    </div>
+</div>

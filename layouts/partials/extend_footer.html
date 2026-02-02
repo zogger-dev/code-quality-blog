@@ -1,0 +1,26 @@
+{{ if .IsPage }}
+<div class="blob blob-top"></div>
+<div class="blob blob-bottom"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add scroll-reveal to standard post elements automatically
+        document.querySelectorAll('.post-content > p, .post-content > h2, .post-content > h3, .post-content > blockquote, .post-content > .highlight').forEach(el => {
+            el.classList.add('scroll-reveal');
+            observer.observe(el);
+        });
+    });
+</script>
+{{ end }}
