@@ -1,9 +1,16 @@
 ---
-title: "Eliminate the Inversion Tax"
+title: 'Eliminate the Inversion Tax'
 date: 2026-01-31
-tags: ["readability"]
+tags: ['readability']
 draft: false
 ---
+
+<div class="epigraph">
+  <blockquote>I won't not use no double negatives.</blockquote>
+  <cite>Bart Simpson</cite>
+</div>
+
+{{< figure src="/images/bart-simpson-chalkboard-gag.png" alt="Bart Simpson Chalkboard Gag" align="center" >}}
 
 Every `if-else` block tells a story with two chapters. The positive branch runs
 when the condition is true. The negative branch, when it's false. Negate the
