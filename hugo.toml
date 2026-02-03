@@ -5,11 +5,8 @@ theme = 'PaperMod'
 
 [params]
 description = "Optimize for engineering at the speed of thought."
-author = "Pradeep Gollakota"
-showReadingTime = true
-showPostNavLinks = true
-showBreadCrumbs = true
 showCodeCopyButtons = true
+hideMeta = true
 comments = true
 
 [[params.socialIcons]]
